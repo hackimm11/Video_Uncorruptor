@@ -35,8 +35,8 @@ class Uncorruptor:
         """
         Le but de cette methode est de se debarasser des frames qui n'appartiennent pas à la video originale.
         Pour cela on utilise la caractéristique des histogrammes et trouver leurs correlations avec la mediane,
-        du coup on enlève les frames qui sont pas bien corrélées, en définissant un seuil en fonction de l'cart
-        intrquartile (IQR). On finit par déminuer la liste des frames (les indices donc changent), mais
+        du coup on enlève les frames qui sont pas bien corrélées, en définissant un seuil en fonction de l'ecart
+        interquartile (IQR). On finit par déminuer la liste des frames (les indices donc changent), mais
         on laisse un vecteur qui porte les vrais indices dans la frames originale. 
         """
 
@@ -75,7 +75,7 @@ class Uncorruptor:
         """
         Dans cette etape on met en ordre les frames cleans obtenus en dessus (frame_list change en dessus),
         une approche c'est de calculer les distances euclidiennes entre tous les frames, et definir le premier frame
-        (ou le dernier) et qui a la somme des distances maximales avec tous les autres frames, aprés on trouve le 
+        (ou le dernier) et qui a la somme des distances maximale avec tous les autres frames, aprés on trouve le 
         frame qui a la distance minimale avec le frame premier frame, on refait ça jusqu'à trouver tous l'ordre final
         de tous les frames.
 
